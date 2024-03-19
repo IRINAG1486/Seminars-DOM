@@ -1,3 +1,5 @@
+"use strict";
+
 {/* <div class="block">
 
 </div>
@@ -9,16 +11,16 @@
 Добавить данному блоку класс item_1 (использовать setAttribute) */}
 
 
-const divElem = document.createElement('div');
-divElem.setAttribute('class', 'item');
-divElem.textContent = "Элемент внутри";
-divElem.style.color = "blue";
-divElem.style.border = "1px solid black";
-divElem.style.backgroundColor = "green";
-divElem.style.padding = "16px";
+// const divElem = document.createElement('div');
+// divElem.setAttribute('class', 'item');
+// divElem.textContent = "Элемент внутри";
+// divElem.style.color = "blue";
+// divElem.style.border = "1px solid black";
+// divElem.style.backgroundColor = "green";
+// divElem.style.padding = "16px";
 
-const divBlock = document.querySelector('.block');
-divBlock.appendChild(divElem);
+// const divBlock = document.querySelector('.block');
+// divBlock.appendChild(divElem);
 
 // Дан код
 // <div class="elem">
@@ -34,6 +36,17 @@ divBlock.appendChild(divElem);
 // Вывести в консоль родительский элемент content
 // Вывести в консоль картинку
 // Вывести в консоль родительский элемент elem
+
+
+// const paragrapfText = document.querySelector('.text');
+// console.log(paragrapfText);
+// console.log(paragrapfText.previousElementSibling);
+// const parentContent = paragrapfText.parentElement;
+// console.log(parentContent);
+// const imgElem = paragrapfText.parentElement.previousElementSibling;
+// console.log(imgElem);
+
+// console.log(paragrapfText.parentElement.parentElement);
 
 // const parElem = document.querySelector('.text');
 // console.log(parElem.previousElementSibling);
@@ -70,17 +83,18 @@ let heading2 = document.querySelector('h2');
 buttonEl.addEventListener('click', (event) => {
     event.preventDefault;
     if (inputEl.value.length == 0) {
-        if (!heading2) {
+        if (!heading2) { 
             heading2 = document.createElement('h2');
+            heading2.textContent = "вы не заполнили поле ввода";
             inputEl.parentElement.insertAdjacentElement('afterend', heading2);
+            inputEl.style.border = "3px solid red";
         }
-        heading2.textContent = "вы не заполнили поле ввода";
-        inputEl.style.border = "3px solid red";
+        
     } else {
-            heading2.remove();
+            // heading2.remove();
             inputEl.style.border = "3px solid green";
         
        
     }
 
-});
+}); 
